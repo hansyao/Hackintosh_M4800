@@ -1,0 +1,44 @@
+
+Clover EFI installer log - Sun Jun 14 21:39:26 CST 2020
+Installer version: r5119 (commit: 0f5da727e) EFI bootloader
+======================================================
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *256.1 GB   disk0
+   1:                        EFI                         367.0 MB   disk0s1
+   2:       Microsoft Basic Data Win10                   147.5 GB   disk0s2
+   3:           Windows Recovery                         826.3 MB   disk0s3
+   4:                 Apple_APFS Container disk2         107.4 GB   disk0s4
+
+/dev/disk1 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *1.0 TB     disk1
+   1:       Microsoft Basic Data Data                    200.3 GB   disk1s1
+   2:       Microsoft Basic Data Backup                  322.1 GB   disk1s2
+   3:       Microsoft Basic Data Coins                   477.8 GB   disk1s3
+
+/dev/disk2 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +107.4 GB   disk2
+                                 Physical Store disk0s4
+   1:                APFS Volume Mac                     74.9 GB    disk2s1
+   2:                APFS Volume Preboot                 45.6 MB    disk2s2
+   3:                APFS Volume Recovery                510.5 MB   disk2s3
+   4:                APFS Volume VM                      20.5 KB    disk2s4
+
+======================================================
+Backing up EFI files
+
+Backing up stage2 file /Volumes/Mac/EFIROOTDIR/boot  to /Volumes/Mac/EFI-Backups/r0000/2020-06-14-21h39/boot
+======================================================
+Installing BootSectors/BootLoader
+
+Stage 0 - Don't write any of boot0af, boot0md, boot0ss to /
+Stage 1 - Don't write any of boot1h2, boot1f32alt, boot1xalt to /
+Stage 2 - Written boot6 (x64) to //boot
+
+Theme 'Clovy' (defined in config.plist) not found !
+Using default theme 'random'
+======================================================
+=========== Clover EFI Installation Finish ===========
+======================================================
