@@ -1,7 +1,7 @@
 # Dell Precision M4800 Workstation - Hackintosh
 ## Tested in for my laptop with below configurations 
-*OpenCore Version 0.6.7
-*Big Sure 11.2.3
+* OpenCore Version 0.6.7
+* Big Sure 11.2.3
 
 ### Basic configuration
 ```
