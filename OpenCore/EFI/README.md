@@ -38,3 +38,20 @@ Buil-in Screen: Dell PN 3874Y LCD Screen FHD (1920x1080) with 30 pin video conne
 11:00.0 SD Host controller [0805]: O2 Micro, Inc. SD/MMC Card Reader Controller [1217:8520] (rev 01)
 
 ```
+
+### USB ID LIST
+```
+Bus 002 Device 004: ID 0a5c:5800 Broadcom Corp. BCM5880 Secure Applications Processor
+Bus 002 Device 003: ID 413c:8143 Dell Computer Corp. Broadcom BCM20702A0 Bluetooth
+Bus 002 Device 002: ID 8087:8000 Intel Corp. Integrated Rate Matching Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 003: ID 0c45:64d0 Microdia Integrated Webcam
+Bus 001 Device 002: ID 8087:8008 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 002: ID 413c:5534 Dell Computer Corp. Hub of E-Port Replicator
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 003: ID 413c:2134 Dell Computer Corp. Hub of E-Port Replicator
+Bus 003 Device 002: ID 2717:5001 Xiaomi Inc. MI wireless mouse
+Bus 003 Device 004: ID 413c:2513 Dell Computer Corp. internal USB Hub of E-Port Replicator
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+````
