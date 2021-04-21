@@ -1,5 +1,5 @@
 # Dell Precision M4800 Workstation - Hackintosh
-## Tested in for my laptop with below configurations 
+## Tested in for my laptop with below configurations, fully compatible for all hardware listed below include dock station
 * OpenCore Version 0.6.7
 * Big Sure 11.2.3
 
@@ -10,6 +10,14 @@ iGPU: Intel HD4600
 eGPU: NVIDIA Quadro K1100M
 Mainboard: la-9772p (eDP 40pin Video Connector)
 Buil-in Screen: Dell PN 3874Y LCD Screen FHD (1920x1080) with 30 pin video connector
+harddisk: 
+   SATA ST1000LM035  1T
+   SATA/SSD ORICO PM200-512G
+DVD-RAM: Matshita UJ8E2 DVD Rewriter
+Built-in SDXC Reader: O2 Micro SD Card Reader
+Built-in Camera: UVC Camera VendorID_3141 ProductID_25808
+Bluetooth/WIFI adapter: Broadcom BCM4352 802.11ac Wireless
+
 ```
 ### PCI LIST
 ```
