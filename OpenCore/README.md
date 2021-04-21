@@ -1,5 +1,5 @@
 # Dell Precision M4800 Workstation - Hackintosh
-## Tested in for my laptop with below configurations, fully compatible for all hardware listed below including dock station
+## Tested in my laptop with below configurations, fully compatible for all hardware listed below including dock station
 * OpenCore Version 0.6.7
 * Big Sure 11.2.3
 
