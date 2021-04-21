@@ -1,4 +1,5 @@
-Tested in for my laptop with below configrations. 
+# Dell Precision M4800 Workstation - Hackintosh Big Sur
+## Tested in for my laptop with below configrations. 
 OpenCore Version 0.6.7
 
 ### Basic configuration
