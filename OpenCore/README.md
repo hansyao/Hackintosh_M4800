@@ -3,7 +3,7 @@
 * OpenCore Version 0.6.7
 * Big Sure 11.2.3
 
-### Basic configuration
+### Basic hardware list
 ```
 CPU: intel i7 the 4th generation 4810MQ
 iGPU: Intel HD4600
