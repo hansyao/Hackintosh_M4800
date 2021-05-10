@@ -47,19 +47,5 @@ Bluetooth/WIFI adapter: Broadcom BCM4352 802.11ac Wireless
 
 ```
 
-### USB ID LIST
-```
-Bus 002 Device 004: ID 0a5c:5800 Broadcom Corp. BCM5880 Secure Applications Processor
-Bus 002 Device 003: ID 413c:8143 Dell Computer Corp. Broadcom BCM20702A0 Bluetooth
-Bus 002 Device 002: ID 8087:8000 Intel Corp. Integrated Rate Matching Hub
-Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 003: ID 0c45:64d0 Microdia Integrated Webcam
-Bus 001 Device 002: ID 8087:8008 Intel Corp. Integrated Rate Matching Hub
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 004 Device 002: ID 413c:5534 Dell Computer Corp. Hub of E-Port Replicator
-Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 003 Device 003: ID 413c:2134 Dell Computer Corp. Hub of E-Port Replicator
-Bus 003 Device 002: ID 2717:5001 Xiaomi Inc. MI wireless mouse
-Bus 003 Device 004: ID 413c:2513 Dell Computer Corp. internal USB Hub of E-Port Replicator
-Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-````
+![screenshot](https://user-images.githubusercontent.com/6515810/117621869-9eafb400-b1a4-11eb-9b0b-90dc2fd393d3.png)
+
