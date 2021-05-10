@@ -22,6 +22,36 @@
         <string>1.0</string>
         <key>IOKitPersonalities</key>
         <dict>
+            <key>MacBookPro11,5-EHC1</key>
+            <dict>
+                <key>CFBundleIdentifier</key>
+                <string>com.apple.driver.AppleUSBMergeNub</string>
+                <key>IOClass</key>
+                <string>AppleUSBMergeNub</string>
+                <key>IOPathMatch</key>
+                <string>IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/EHC1@1d/EHC1@1d000000</string>
+                <key>IOProviderClass</key>
+                <string>AppleUSBEHCIPCI</string>
+                <key>IOProviderMergeProperties</key>
+                <dict>
+                    <key>kUSBMuxEnabled</key>
+                    <false/>
+                    <key>port-count</key>
+                    <data>AQAAAA==</data>
+                    <key>ports</key>
+                    <dict>
+                        <key>PR01</key>
+                        <dict>
+                            <key>UsbConnector</key>
+                            <integer>0</integer>
+                            <key>port</key>
+                            <data>AQAAAA==</data>
+                        </dict>
+                    </dict>
+                </dict>
+                <key>model</key>
+                <string>MacBookPro11,5</string>
+            </dict>
             <key>MacBookPro11,5-EHC2</key>
             <dict>
                 <key>CFBundleIdentifier</key>
@@ -37,7 +67,7 @@
                     <key>kUSBMuxEnabled</key>
                     <false/>
                     <key>port-count</key>
-                    <data>AgAAAA==</data>
+                    <data>AQAAAA==</data>
                     <key>ports</key>
                     <dict>
                         <key>PR12</key>
@@ -46,13 +76,6 @@
                             <integer>255</integer>
                             <key>port</key>
                             <data>AQAAAA==</data>
-                        </dict>
-                        <key>PR21</key>
-                        <dict>
-                            <key>UsbConnector</key>
-                            <integer>255</integer>
-                            <key>port</key>
-                            <data>AgAAAA==</data>
                         </dict>
                     </dict>
                 </dict>
@@ -74,9 +97,16 @@
                     <key>kUSBMuxEnabled</key>
                     <true/>
                     <key>port-count</key>
-                    <data>FQAAAA==</data>
+                    <integer>21</integer>
                     <key>ports</key>
                     <dict>
+                        <key>HS01</key>
+                        <dict>
+                            <key>UsbConnector</key>
+                            <integer>3</integer>
+                            <key>port</key>
+                            <data>AQAAAA==</data>
+                        </dict>
                         <key>HS02</key>
                         <dict>
                             <key>UsbConnector</key>
@@ -139,6 +169,20 @@
                             <integer>3</integer>
                             <key>port</key>
                             <data>EgAAAA==</data>
+                        </dict>
+                        <key>SS04</key>
+                        <dict>
+                            <key>UsbConnector</key>
+                            <integer>3</integer>
+                            <key>port</key>
+                            <data>EwAAAA==</data>
+                        </dict>
+                        <key>SS05</key>
+                        <dict>
+                            <key>UsbConnector</key>
+                            <integer>3</integer>
+                            <key>port</key>
+                            <data>FAAAAA==</data>
                         </dict>
                         <key>SS06</key>
                         <dict>

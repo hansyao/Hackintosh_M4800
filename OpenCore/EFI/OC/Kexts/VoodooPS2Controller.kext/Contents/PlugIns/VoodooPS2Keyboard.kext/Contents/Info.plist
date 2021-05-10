@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>BuildMachineOSBuild</key>
-        <string>16E154a</string>
+        <string>20D91</string>
         <key>CFBundleExecutable</key>
         <string>VoodooPS2Keyboard</string>
         <key>CFBundleGetInfoString</key>
@@ -29,17 +29,19 @@
         <key>DTCompiler</key>
         <string>com.apple.compilers.llvm.clang.1_0</string>
         <key>DTPlatformBuild</key>
-        <string>8B62</string>
+        <string>12E262</string>
+        <key>DTPlatformName</key>
+        <string>macosx</string>
         <key>DTPlatformVersion</key>
-        <string>GM</string>
+        <string>11.3</string>
         <key>DTSDKBuild</key>
-        <string>16B2649</string>
+        <string>20E214</string>
         <key>DTSDKName</key>
-        <string>macosx10.12</string>
+        <string>macosx11.3</string>
         <key>DTXcode</key>
-        <string>0810</string>
+        <string>1250</string>
         <key>DTXcodeBuild</key>
-        <string>8B62</string>
+        <string>12E262</string>
         <key>IOKitPersonalities</key>
         <dict>
             <key>ApplePS2Keyboard</key>
@@ -58,8 +60,98 @@
                         <dict>
                             <key>Breakless PS2</key>
                             <array>
-                                <string>e005</string>
-                                <string>e006</string>
+                                <string>e01e;Touchpad Fn+f3 is breakless</string>
+                                <string>e008;wifi switch</string>
+                                <string>;e06e;Video Mirror</string>
+                                <string>;e05e;power</string>
+                                <string>;e05f;sleep</string>
+                            </array>
+                            <key>Custom ADB Map</key>
+                            <array>
+                                <string>e005=6b;FN+down arrow to brightness down</string>
+                                <string>e006=71;FN+up arrow to brightness up</string>
+                                <string>e045=4f;fn+insert to F18</string>
+                                <string>e021=50;Calc to F19</string>
+                                <string>46=83;fn+F3 to Launchpad</string>
+                                <string>e037=69;fn+Home/End to F13</string>
+                            </array>
+                            <key>Function Keys Special</key>
+                            <array>
+                                <string>;The following 12 items map Fn+fkeys to fkeys</string>
+                                <string>e020=3b</string>
+                                <string>e02e=3c</string>
+                                <string>e030=3d</string>
+                                <string>e022=3e</string>
+                                <string>;Fn+f5 macro</string>
+                                <string>;Fn+f6 macro</string>
+                                <string>;Fn+f7 macro</string>
+                                <string>;Fn+f8 macro</string>
+                                <string>;Fn+f9 macro</string>
+                                <string>;Fn+f10 no code</string>
+                                <string>e005=57</string>
+                                <string>e006=58</string>
+                                <string>;The following 12 items map fkeys to Fn+fkeys</string>
+                                <string>3b=e020</string>
+                                <string>3c=e02e</string>
+                                <string>3d=e030</string>
+                                <string>3e=e022</string>
+                                <string>;Fn+f5 macro</string>
+                                <string>;Fn+f6 macro</string>
+                                <string>;Fn+f7 macro</string>
+                                <string>;Fn+f8 macro</string>
+                                <string>;Fn+f9 macro</string>
+                                <string>;Fn+f10 no code</string>
+                                <string>57=e005</string>
+                                <string>58=e006</string>
+                            </array>
+                            <key>Function Keys Standard</key>
+                            <array>
+                                <string>;The following 12 items map Fn+fkeys to Fn+fkeys</string>
+                                <string>e020=e020</string>
+                                <string>e02e=e02e</string>
+                                <string>e030=e030</string>
+                                <string>e022=e022</string>
+                                <string>;Fn+f5 macro</string>
+                                <string>;Fn+f6 macro</string>
+                                <string>;Fn+f7 macro</string>
+                                <string>;Fn+f8 macro</string>
+                                <string>;Fn+f9 macro</string>
+                                <string>;Fn+f10 no code</string>
+                                <string>e005=e005</string>
+                                <string>e006=e006</string>
+                                <string>;The following 12 items map fkeys to fkeys</string>
+                                <string>3b=3b</string>
+                                <string>3c=3c</string>
+                                <string>3d=3d</string>
+                                <string>3e=3e</string>
+                                <string>3f=3f</string>
+                                <string>40=40</string>
+                                <string>41=41</string>
+                                <string>42=42</string>
+                                <string>43=43</string>
+                                <string>44=44</string>
+                                <string>57=57</string>
+                                <string>58=58</string>
+                            </array>
+                        </dict>
+                        <key>M4800</key>
+                        <dict>
+                            <key>Breakless PS2</key>
+                            <array>
+                                <string>e01e;Touchpad Fn+f3 is breakless</string>
+                                <string>e008;wifi switch</string>
+                                <string>;e06e;Video Mirror</string>
+                                <string>;e05e;power</string>
+                                <string>;e05f;sleep</string>
+                            </array>
+                            <key>Custom ADB Map</key>
+                            <array>
+                                <string>e005=6b;FN+down arrow to brightness down</string>
+                                <string>e006=71;FN+up arrow to brightness up</string>
+                                <string>e045=4f;fn+insert to F18</string>
+                                <string>e021=50;Calc to F19</string>
+                                <string>46=40;fn+F3 to F17</string>
+                                <string>e037=69;fn+Home/End to F13</string>
                             </array>
                             <key>Function Keys Special</key>
                             <array>
@@ -268,17 +360,15 @@
                         <key>Custom PS2 Map</key>
                         <array>
                             <string>;Items must be strings in the form of scanfrom=scanto (in hex)</string>
-                            <string>e027=0;disable discrete fnkeys toggle</string>
-                            <string>e028=0;disable discrete trackpad toggle</string>
                         </array>
                         <key>HIDF12EjectDelay</key>
                         <integer>250</integer>
                         <key>LogScanCodes</key>
-                        <integer>1</integer>
+                        <integer>0</integer>
                         <key>Make Application key into Apple Fn key</key>
                         <false/>
                         <key>Make Application key into right windows</key>
-                        <true/>
+                        <false/>
                         <key>Make right modifier keys into Hangul and Hanja</key>
                         <false/>
                         <key>SleepPressTime</key>
@@ -286,7 +376,7 @@
                         <key>Swap capslock and left control</key>
                         <false/>
                         <key>Swap command and option</key>
-                        <false/>
+                        <true/>
                         <key>Use ISO layout keyboard</key>
                         <false/>
                         <key>alt_handler_id</key>
@@ -686,6 +776,8 @@
                 </dict>
             </dict>
         </dict>
+        <key>LSMinimumSystemVersion</key>
+        <string>11.3</string>
         <key>OSBundleLibraries</key>
         <dict>
             <key>com.apple.iokit.IOHIDSystem</key>
