@@ -100,7 +100,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
     External (_SB.PCI0.B0D3, DeviceObj)
     External (_SB.PCI0.GLAN, DeviceObj)
     External (_SB.PCI0.HDEF, DeviceObj)
-    // External (_SB.PCI0.HDEF._ADR, IntObj)
+    // External (_SB.PCI0.HDEX, DeviceObj)
     External (_SB.PCI0.RP04, DeviceObj)
     External (XPRW, MethodObj)
     External (_SB.PCI0.ZPRW, MethodObj)
@@ -182,6 +182,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             Return (_OSI (Arg0))
         }
     }
+
 
 
     // add Method EV5 - enable Dell brightness FN key (fn + up/down arrow for Dell M4800)
@@ -324,9 +325,38 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
     }
 
     
-    //fix dell+fn+F1 (M4800)
+    
     Scope (_SB)
     {
+        //fake light sensor
+        Device (ALS0)
+        {
+            Name (_HID, "ACPI0008")
+            Name (_CID, "smc-als")
+            Name (_ALI, 0x012C)
+            Name (_ALR, Package (0x01)
+            {
+                Package (0x02)
+                {
+                    0x64,
+                    0x012C
+                }
+            })
+            Method (_STA, 0, NotSerialized)
+            {
+                If (_OSI ("Darwin"))
+                {
+                    Return (0x0F)
+                }
+                Else
+                {
+                    Return (Zero)
+                }
+            }
+        }
+
+
+        //fix dell+fn+F1 (M4800)
         Method (BTNV, 2, NotSerialized)
         {
             If (_OSI ("Darwin") && (Arg0 == 2))
@@ -515,15 +545,15 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                         "model", Buffer () {"Intel 8 Series/C220 Series Chipset High Definition Audio Controller"},
                         // "device_type", Buffer () {"Audio device"},
                         "built-in", Buffer (One) {0x01},
-                        // "layout-id", Buffer ()
-                        //     {
-                        //         0x07, 0x00, 0x00, 0x00
-                        //     },
-                        "alc-layout-id", Buffer ()
+                        "layout-id", Buffer (0x04)
                             {
                                 0x3b, 0x00, 0x00, 0x00
                             },
-                        "pci-aspm-default",0x03
+                        "alc-layout-id", Buffer (0x04)
+                            {
+                                0x3b, 0x00, 0x00, 0x00
+                            },
+                        "pci-aspm-default", 0x03
                     }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                     Return (Local0)
@@ -969,24 +999,21 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             {
                                 0x03, 0x00, 0x00, 0x00
                             },                          
-                        // "layout-id", Buffer ()
-                        //     {
-                        //         0x07, 0x00, 0x00, 0x00
-                        //     },
-                        "alc-layout-id", Buffer ()
+                        "layout-id", 
+                            Buffer (0x04)
                             {
                                 0x3b, 0x00, 0x00, 0x00
                             },
+                        // "alc-layout-id", Buffer ()
+                        //     {
+                        //         0x3b, 0x00, 0x00, 0x00
+                        //     },
                         "hda-gfx", 
                             Buffer ()
                             {
                                 "onboard-1"
-                            }, 
-                        "layout-id", 
-                            Buffer (0x04)
-                            {
-                                0x07, 0x00, 0x00, 0x00                           // ....
-                            }                        
+                            }
+                       
                     }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
 
@@ -1305,7 +1332,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             "model", Buffer () {"GK107 HDMI Audio Controller"},
                             // "device_type", Buffer () {"Audio device"},
                             "built-in", Buffer (One) {0x0},                                
-                            "layout-id", Buffer ()
+                            "layout-id", Buffer (0x04)
                                 {
                                     0x01, 0x00, 0x00, 0x00
                                 },
@@ -1511,6 +1538,6 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 PUSH (Local0)
             }
         }
-      }                  
-        
+    
+    }    
 }
