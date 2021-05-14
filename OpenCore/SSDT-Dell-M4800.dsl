@@ -3,11 +3,11 @@
 // what works: All hardware work perfectly. it's approximately 100% approach to Macbook Pro.
 // what not work: NONE
 
-/* keyboard/trackpad driver: please make sure you are use VoodooPSController.kext which been modified and recompiled by myself. 
+/* keyboard/trackpad driver: please make sure you are VoodooPSController.kext which been modified and recompiled by myself. 
     (specifically fixed num lock, Ctrl+Alt+Del, etc. for Dell M4800)
 */
 
-/* Audio Driver: please make sure you are use AppleALC.kext which been modified and recompiled by myself. 
+/* Audio Driver: please make sure you use AppleALC.kext which been modified and recompiled by myself. 
     (specifically fixed ALC292 for Dell M4800,  which new layout-id 59 was injected in this patch. no alcid injection in boot-args any longer)
 */
 
@@ -100,7 +100,6 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
     External (_SB.PCI0.B0D3, DeviceObj)
     External (_SB.PCI0.GLAN, DeviceObj)
     External (_SB.PCI0.HDEF, DeviceObj)
-    // External (_SB.PCI0.HDEX, DeviceObj)
     External (_SB.PCI0.RP04, DeviceObj)
     External (XPRW, MethodObj)
     External (_SB.PCI0.ZPRW, MethodObj)
@@ -114,7 +113,6 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
     External (VDP1, MethodObj) 
     External (_SB.XSID, MethodObj)                 
     External (_SB_.PCI0, DeviceObj)
-    External (_SB.PCI0.UPRW, MethodObj)
     External (_SB_.PCI0.SBUS, DeviceObj)
     External (_SB.PCI0.LPCB, DeviceObj)
     External (_SB.PCI0.LPCB.RTC, DeviceObj)
@@ -137,7 +135,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
     External (_SB.PCI0.EHC2, DeviceObj)
     External (_SB.PCI0.XHC, DeviceObj)
     External (OSYS, FieldUnitObj)
-
+    External (S0ID, FieldUnitObj)
     External(ZPTS, MethodObj)
     External(ZWAK, MethodObj)
     External (_SB_.PCI0.XHC_.PMEE, FieldUnitObj)
@@ -446,6 +444,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
         }
 
         //OCWork - Dell
+        S0ID = One          //enable GPI0
         \_SB.ACOS = 0x80
         \_SB.ACSE = 0 //ACSE=0:win7;;ACSE=1:win8
         
@@ -545,6 +544,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                         "model", Buffer () {"Intel 8 Series/C220 Series Chipset High Definition Audio Controller"},
                         // "device_type", Buffer () {"Audio device"},
                         "built-in", Buffer (One) {0x01},
+                        "hda-gfx", Buffer () { "onboard-1" },
                         "layout-id", Buffer (0x04)
                             {
                                 0x3b, 0x00, 0x00, 0x00
@@ -553,7 +553,8 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             {
                                 0x3b, 0x00, 0x00, 0x00
                             },
-                        "pci-aspm-default", 0x03
+                        "pci-aspm-default", 0x03,
+                        Buffer (One) {0x00}
                     }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                     Return (Local0)
@@ -1273,13 +1274,13 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             "@1,connector-type", 
                             Buffer (0x04)
                             {
-                                0x00, 0x08, 0x00, 0x00                           // ....
+                                0x00, 0x04, 0x00, 0x00                           // ....
                             }, 
 
                             "@2,connector-type", 
                             Buffer (0x04)
                             {
-                                0x00, 0x08, 0x00, 0x00                           // ....
+                                0x00, 0x04, 0x00, 0x00                           // ....
                             }, 
 
                             "@3,connector-type", 
