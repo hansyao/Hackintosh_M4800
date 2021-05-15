@@ -15,7 +15,7 @@ Hackintosh for Dell Precision M4800
 
 ## Functionality in OpenCore
 click [here](https://github.com/badfellow/Hackintosh_M4800/tree/master/OpenCore) to view OpenCore EFI package \
-Specifically designed one [SSDT.aml](https://github.com/badfellow/Hackintosh_M4800/raw/master/OpenCore/EFI/OC/ACPI/SSDT-Dell-M4800.aml) to fix ACPI for M4800. 
+Specifically designed the [SSDT-Dell-M4800.aml](https://github.com/badfellow/Hackintosh_M4800/raw/master/OpenCore/EFI/OC/ACPI/SSDT-Dell-M4800.aml) to fix ACPI for M4800. 
 
 **what works:**
 ***all hardware support***
