@@ -43,5 +43,5 @@ Specifically designed one [SSDT.aml](https://github.com/badfellow/Hackintosh_M48
 **what not work:**
 * None
 
-**Bugs:***
+**Bugs:**
 * sometimes touchpad broken when reboot - you can hit <kbd>Win</kbd>+<kbd>Alt</kbd> until login screen show up to solve this issue when boot up. 
