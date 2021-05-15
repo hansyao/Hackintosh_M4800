@@ -18,7 +18,7 @@ click [here](https://github.com/badfellow/Hackintosh_M4800/tree/master/OpenCore)
 Specifically designed one [SSDT.aml](https://github.com/badfellow/Hackintosh_M4800/raw/master/OpenCore/EFI/OC/ACPI/SSDT-Dell-M4800.aml) to fix ACPI for M4800. 
 
 **what works:**
-* **all hardware support** 
+***all hardware support***
 * Power management
 * Sleep/idle
 * dual GPU
