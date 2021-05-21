@@ -276,7 +276,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
         {
             \_SB.PCI9.TPTS = Arg0
             
-            if(\_SB.PCI9.FNOK ==1)
+            if(\_SB.PCI9.FNOK == One)
             {
                 Arg0 = 3
             }
@@ -296,12 +296,12 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
         {
             \_SB.PCI9.TWAK = Arg0
             
-            if(\_SB.PCI9.FNOK ==1)
+            if(\_SB.PCI9.FNOK == One)
             {
-                \_SB.PCI9.FNOK =0
+                \_SB.PCI9.FNOK = Zero
                 Arg0 = 3
             }
-            If (Arg0 < 1 || Arg0 > 5)
+            If (Arg0 < One || Arg0 > 5)
             { Arg0 = 3 }
             
         }
@@ -317,7 +317,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
         {
             If ((5 == Arg0) && CondRefOf (\_SB.PCI0.XHC.PMEE))
             {
-                \_SB.PCI0.XHC.PMEE = 0
+                \_SB.PCI0.XHC.PMEE = Zero
             }
         }
     }
@@ -332,7 +332,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             Name (_HID, "ACPI0008")
             Name (_CID, "smc-als")
             Name (_ALI, 0x012C)
-            Name (_ALR, Package (0x01)
+            Name (_ALR, Package (One)
             {
                 Package (0x02)
                 {
@@ -360,20 +360,20 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             If (_OSI ("Darwin") && (Arg0 == 2))
             {
             //    Notify (\_SB.PCI0.LPCB.PS2K, 0x045f)
-                If (\_SB.PCI9.MODE == 1) //PNP0C0E
+                If (\_SB.PCI9.MODE == One) //PNP0C0E
                 {
-                    \_SB.PCI9.FNOK =1
+                    \_SB.PCI9.FNOK = One
                     \_SB.XTNV(Arg0, Arg1)
                 }
                 Else //PNP0C0D
                 {
-                    If (\_SB.PCI9.FNOK!=1)
+                    If (\_SB.PCI9.FNOK != One)
                     {
-                        \_SB.PCI9.FNOK =1
+                        \_SB.PCI9.FNOK = One
                     }
                     Else
                     {
-                        \_SB.PCI9.FNOK =0
+                        \_SB.PCI9.FNOK = Zero
                     }
                     \_SB.XTNV(0x03, Arg1)
                 }
@@ -392,9 +392,9 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
         {
             If (_OSI ("Darwin"))
             {
-                if(\_SB.PCI9.FNOK==1)
+                if(\_SB.PCI9.FNOK == One)
                 {
-                    Return (0)
+                    Return (Zero)
                 }
                 Else
                 {
@@ -446,10 +446,10 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
         //OCWork - Dell
         S0ID = One          //enable GPI0
         \_SB.ACOS = 0x80
-        \_SB.ACSE = 0 //ACSE=0:win7;;ACSE=1:win8
+        \_SB.ACSE = Zero //ACSE=0:win7;;ACSE=1:win8
         
         //disable HPET
-        HPAE = 0
+        HPAE = Zero
         
 
         // CPU-X86 Plug fix - enable CPU power management
@@ -474,7 +474,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             {
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () 
                     {
                         "AAPL,slot-name", "Built In",
@@ -493,7 +493,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             {
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () 
                     {
                         "AAPL,slot-name", "Built In",
@@ -517,7 +517,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 }
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () 
                     {
                         "AAPL,slot-name", "Built In",
@@ -536,7 +536,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             {
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () 
                     {
                         "AAPL,slot-name", "Built In",
@@ -565,7 +565,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             {
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () 
                     {
                         "AAPL,slot-name", "Built In",
@@ -582,7 +582,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
 
             SCOPE (RP04)
             {
-                VDID == 0xFFFFFFFF                      //disable RP04
+                VDID == Ones                      //disable RP04
             }  
 
             Scope (LPCB)
@@ -591,7 +591,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 // compatibale intel 8c4b devices to be fully compatible with QM87 Express LPC Controller
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () {
                         "AAPL,slot-name", "Built In",
                         "name", "LPC Controller",
@@ -604,13 +604,29 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                     Return (Local0)
                 }                
-                
+
+                Device (PMCR)
+                {
+                    Name (_HID, EisaId ("APP9876"))  // _HID: Hardware ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0B)
+                    }
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+                    {
+                        Memory32Fixed (ReadWrite,
+                            0xFE000000,         // Address Base
+                            0x00010000,         // Address Length
+                            )
+                    })
+                }
+
                 //disable RTC
                 Scope (RTC)
                 {
                     Method (_STA, 0, NotSerialized)
                     {
-                        Return (0)
+                        Return (Zero)
                     }
                 }
             
@@ -619,7 +635,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 {
                     Method (_STA, 0, NotSerialized)
                     {
-                        Return (0)
+                        Return (Zero)
                     }
                 }
                 
@@ -629,7 +645,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 {
                     Method (_STA, 0, NotSerialized)
                     {
-                        Return (0)
+                        Return (Zero)
                     }
                 }        
 
@@ -849,7 +865,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                         
                         "Breakless PS2", package()
                         {
-                            package(){},
+                            package(Zero){0x04},
                             "e01e",    //Touchpad fn+f3 is breakless
                             "e008",    // wifi swith is breakless
                             "e006e",    // Video Mirror is breakless
@@ -858,7 +874,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                         
                         "Custom ADB Map", Package()
                         {
-                            Package(){},
+                            Package(Zero){0x06},
                             "e005=6b",    // e005 brightness down, 6b is F14
                             "e006=71",    // e006 brightness up, 71 is F15
                             "e45=4f",     // fin+insert(pause) to F18
@@ -872,7 +888,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                     // Dell Keyboard mapping to ApplePS2Keyboard.kext
                     Method(_DSM, 4)
                     {
-                        If (!Arg2) { Return (Buffer() { 0x03 } ) }
+                        If (!Arg2) { Return (Buffer(One) { 0x03 } ) }
                         Return (Package()
                         {
                             "RM,oem-id", "DELL",
@@ -906,7 +922,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 }
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package()
                     {
                         "device-id", Buffer() { 0x12, 0x04, 0x00, 0x00 },
@@ -930,7 +946,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             0x38, 0x37, 0x34, 0x59, 0x80, 0x31, 0x35, 0x36, 0x57, 0x46, 0x36, 0x0a,
                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x41, 0x31, 0x9e, 0x00, 0x10, 0x00,
                             0x00, 0x0a, 0x01, 0x0a, 0x20, 0x20, 0x00, 0x4e
-                        },
+                        }
                     }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, Refof (Local0))
                     Return (Local0)
@@ -1005,10 +1021,10 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             {
                                 0x3b, 0x00, 0x00, 0x00
                             },
-                        // "alc-layout-id", Buffer ()
-                        //     {
-                        //         0x3b, 0x00, 0x00, 0x00
-                        //     },
+                        "alc-layout-id", Buffer ()
+                            {
+                                0x3b, 0x00, 0x00, 0x00
+                            },
                         "hda-gfx", 
                             Buffer ()
                             {
@@ -1028,7 +1044,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                        
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () {
                         "AAPL,clock-id", Buffer (One) { 0x02 },
                         "AAPL,slot-name", "Built In",
@@ -1058,7 +1074,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () {
                         "AAPL,clock-id", Buffer (One) { 0x02 },
                         "AAPL,slot-name", "Built In",
@@ -1087,7 +1103,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
 
                 Method (_DSM, 4, NotSerialized)
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () {
                         "AAPL,clock-id", Buffer (One) { 0x02 },
                         "AAPL,slot-name", "Built In",
@@ -1151,7 +1167,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                 }
                 Method (_DSM, 4, NotSerialized)
                 {      
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                     Store (Package () {
                         "AAPL,slot-name", "Built In",
                         "name", "SMBus",
@@ -1239,7 +1255,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                                 Notify (\_SB_.PCI0.PEG0.PEGP.LCD_, 0x86) // Device-Specific
                             }
         
-                        If ((Arg0 & 0x02))
+                            If ((Arg0 & 0x02))
                             {
                             //    \RMDT.P1 ("DEBUG_HANS_SB.PCI0.PEG0.GFX0.BRT6.0x87")
                                 Notify (\_SB.PCI0.LPCB.PS2K, 0x0405)
@@ -1254,7 +1270,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                     
                         If ((Arg2 == Zero))
                         {
-                            Return (package ()
+                            Return (package (One)
                             {
                                 Buffer (One)
                                 {
@@ -1274,13 +1290,13 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             "@1,connector-type", 
                             Buffer (0x04)
                             {
-                                0x00, 0x04, 0x00, 0x00                           // ....
+                                0x00, 0x08, 0x00, 0x00                           // ....
                             }, 
 
                             "@2,connector-type", 
                             Buffer (0x04)
                             {
-                                0x00, 0x04, 0x00, 0x00                           // ....
+                                0x00, 0x08, 0x00, 0x00                           // ....
                             }, 
 
                             "@3,connector-type", 
@@ -1335,7 +1351,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             "built-in", Buffer (One) {0x0},                                
                             "layout-id", Buffer (0x04)
                                 {
-                                    0x01, 0x00, 0x00, 0x00
+                                    0x03, 0x00, 0x00, 0x00
                                 },
                             // "alc-layout-id", Buffer ()
                             //     {
@@ -1350,7 +1366,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                             Buffer ()
                             {
                                 0x03, 0x01, 0x00, 0x00
-                            }
+                            }                  
                         }, Local0)
                         DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                         Return (Local0)                        
@@ -1381,6 +1397,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
                         "model", Buffer () {"Broadcom BCM4352 802.11ac Wireless Network Adapter"},
                         "device_type", Buffer () {"AirPort"},
                         "compatible", "pci14e4,43a0",
+                        // "device-id",  Buffer(0x04) { 0xa3, 0x43, 0x00, 0x00 },
                         "built-in", Buffer (One) {0x01}
                     }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
@@ -1398,7 +1415,7 @@ DefinitionBlock ("", "SSDT", 1, "DELL", "M4800", 0)
             //Name (_SUN, One)
             Method (_DSM, 4, NotSerialized)
             {
-                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                 Store (Package () 
                 {
                     "AAPL,slot-name", "Built In",
