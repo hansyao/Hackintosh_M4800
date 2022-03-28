@@ -10,12 +10,16 @@ Hackintosh for Dell Precision M4800
 * BCM4352 802.11ac Wireless Network Adapter
 * Broadcom BCM20702A0 Bluetooth (integrated with BCM4352)
 
-*OpenCore - macOS Bigsur 11.2.3  tested* \
-*Clover - macOS Catalina 10.15.6 tested*
+*OpenCore* - macOS **Bigsur** 11.2.3  tested \
+*Clover* - macOS **Catalina** 10.15.6 tested \
+*OpenCore* - macOS **Monterey** 12.3 was released for Dell M4800, please move to [https://github.com/hansyao/Hackintosh_M4800](https://github.com/hansyao/Hackintosh_M4800)
 
-# Highlights: 
+# Highlights:
 
-macOS Monterey was released for Dell M4800, please move to [https://github.com/hansyao/Hackintosh_M4800](https://github.com/hansyao/Hackintosh_M4800)
+* ```AppleALC.kext```, ```VoodooPS2Controller.kext``` were customized for M4800. You could find the repo here: [AppleALC](../../../AppleALC_Dell_M4800) and [OS-X-ALPS-DRIVER](https://github.com/hansyao/OS-X-ALPS-DRIVER).
+* You can also find the user guide which how I fixed the keyboard and sound card driver here. [How to fix AppleALC for Dell Precision M4800](https://blog.oneplus-solution.com/Dell_Precision_M4800_AppleALC_fix) and [how to fix keyboard/touchpad drive for Dell Precision M4800](https://blog.oneplus-solution.com/Dell_M4800_keyboard_fix) (both in Chinese).
+* [ssdt](../../blob/master/OpenCore/SSDT-Dell-M4800.dsl) was customzied based upon my hardware list. Probably you need to recompile based upon your own hardware configurations. 
+
 
 ## Functionality in OpenCore
 click [here](https://github.com/badfellow/Hackintosh_M4800/tree/master/OpenCore) to view OpenCore EFI package \
