@@ -12,7 +12,7 @@ Hackintosh for Dell Precision M4800
 
 *OpenCore* - macOS **Bigsur** 11.2.3  tested \
 *Clover* - macOS **Catalina** 10.15.6 tested \
-*OpenCore* - macOS **Monterey** 12.3 was released for Dell M4800, please move to [https://github.com/hansyao/Hackintosh_M4800](https://github.com/hansyao/Hackintosh_M4800)
+*OpenCore* - macOS **Monterey** 12.3 was released for Dell M4800, please move to [https://github.com/hansyao/Hackintosh_Monterey_M4800](https://github.com/hansyao/Hackintosh_Monterey_M4800)
 
 # Highlights:
 
@@ -22,8 +22,8 @@ Hackintosh for Dell Precision M4800
 
 
 ## Functionality in OpenCore
-click [here](https://github.com/badfellow/Hackintosh_M4800/tree/master/OpenCore) to view OpenCore EFI package \
-Specifically designed the [SSDT-Dell-M4800.aml](https://github.com/badfellow/Hackintosh_M4800/raw/master/OpenCore/EFI/OC/ACPI/SSDT-Dell-M4800.aml) to fix ACPI for M4800. 
+click [here](https://github.com/hansyao/Hackintosh_M4800/tree/master/OpenCore) to view OpenCore EFI package \
+Specifically designed the [SSDT-Dell-M4800.aml](https://github.com/hansyao/Hackintosh_M4800/raw/master/OpenCore/EFI/OC/ACPI/SSDT-Dell-M4800.aml) to fix ACPI for M4800. 
 
 **what works:**
 ***all hardware support***
