@@ -18,6 +18,7 @@ Hackintosh for Dell Precision M4800
 
 * ```AppleALC.kext```, ```VoodooPS2Controller.kext``` were customized for M4800. You could find the repo here: [AppleALC](https://github.com/hansyao/AppleALC_Dell_M4800) and [OS-X-ALPS-DRIVER](https://github.com/hansyao/OS-X-ALPS-DRIVER).
 * You can also find the user guide which how I fixed the keyboard and sound card driver here. [How to fix AppleALC for Dell Precision M4800](https://blog.oneplus-solution.com/Dell_Precision_M4800_AppleALC_fix) and [how to fix keyboard/touchpad drive for Dell Precision M4800](https://blog.oneplus-solution.com/Dell_M4800_keyboard_fix) (both in Chinese).
+* AppleALC for Dell Precision M4800 support(layout-id 59) has been merged to [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC/pull/773) in release version [1.7.1](https://github.com/acidanthera/AppleALC/releases/tag/1.7.1). You would be able to update the driver from [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) going forward.
 * [ssdt](../../blob/master/OpenCore/SSDT-Dell-M4800.dsl) was customzied based upon my hardware list. Probably you need to recompile based upon your own hardware configurations. 
 
 
