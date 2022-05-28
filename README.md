@@ -1,6 +1,9 @@
 # Hackintosh_M4800
 Hackintosh for Dell Precision M4800
 
+>it's tested based on M4800, however, it should be also applied to Dell Precision M6800 which hardware similar to M4800
+
+
 * Intel Core i7 4810MQ
 * Intel HD Graphics 4600
 * NVIDIA Quadro K1100M
