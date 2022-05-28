@@ -53,4 +53,4 @@ Specifically designed the [SSDT-Dell-M4800.aml](https://github.com/hansyao/Hacki
 * None
 
 **Bugs:**
-* sometimes touchpad broken when reboot - you can hit <kbd>Win</kbd>+<kbd>Alt</kbd> until login screen show up to solve this issue when boot up. 
+* None
